@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <% h1 class="text-secondary">Listado de productos</h1> %>   
+    <% products.forEach((item)=>{ %>
+        <p>
+            id: <%=item.id%><br/>
+            titulo: <%=item.title%><br/>
+            price: <%=item.price%><br/>
+            <img class="product-img" src="<%=item.thumbnail %>"/><br/>
+        </p>
+    <% }) %>
+  </body>
+</html>

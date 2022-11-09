@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head'); %>
+    <title>Formulario</title>
+</head>
+
+<body>
+    <h1 class="text-secondary">Ingrese Producto</h1>
+    <form method="POST" action="/productos">
+      <input id="title" name="title" placeholder="Nombre del producto" required="true" />
+      <input type="number" id="price" name="precio" placeholder="Precio del producto" required="true" />
+      <input id="thumbnail" name="thumbnail" placeholder="URL de la imagen" required="true" />
+      <input class='btn btn-success' type='submit' value='Enviar' />
+
+
+    </form>
+
+</body>
+
+</html>

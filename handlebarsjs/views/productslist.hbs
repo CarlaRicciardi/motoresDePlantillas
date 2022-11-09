@@ -1,0 +1,23 @@
+<h1 class="text-secondary">Listado de productos</h1>
+<div class='products-container p-4 bg-light'>
+  {{#if productsExist}}
+    {{#each products}}
+      <div class='products-card fw-bold text-secondary fs-3'>
+        <img src='{{this.thumbnail}}' class='product-img' />
+        <p>ID: {{this.id}}</p>
+        <p>Producto: {{this.title}}</p>
+        <p>Precio: $ {{this.price}}</p>
+      </div>
+    {{/each}}
+  {{else}}
+
+    <div class='mt-3 text-center'>
+
+      <h2 class='p-4'>No hay productos aun </h2>
+      <div class='mt-3 text-center'>
+        <a href='/'>
+          <button class='btn btn-success'> Agregar producto</button>
+        </a>
+      </div>
+    </div>
+  {{/if}}
