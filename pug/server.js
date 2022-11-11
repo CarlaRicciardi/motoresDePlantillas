@@ -77,7 +77,7 @@ app.post('/productos', async (req, res) => {
   const { body } = req;
   try {
     await container.save(body);
-    res.render('gracias.hbs');
+    res.render('gracias.pug');
   } catch {
     res.json({ error: true, msj: 'No se pudo guardar el producto' });
   }
