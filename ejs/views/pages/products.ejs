@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head'); %>
-  </head>
-  <body>
-    <% h1 class="text-secondary">Listado de productos %>   
-    <% products.forEach((item)=>{ %>
-        <p>
-            id: <%=item.id%><br/>
-            titulo: <%=item.title%><br/>
-            price: <%=item.price%><br/>
-            <img class="product-img" src="<%=item.thumbnail %>"/><br/>
-        </p>
-    <% }) %>
-  </body>
+
+<head>
+  <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <h1 class="text-secondary">Listado de productos</h1>
+    <div class="products-container">
+      <% if(products?.length> 0){ %>
+        <% products.forEach((item)=>{ %>
+          <div class="products-card">
+            <img class="product-img" src="<%=item.thumbnail %>" />
+            <p>ID: <%=item.id%>
+            </p>
+            <p>Producto: <%=item.title%>
+            </p>
+            <p>Precio: $ <%=item.price%>
+            </p>
+          </div>
+          <% }) %>
+            <% } else { %>
+              no hay productos!!!
+              <% } %>
+    </div>
+    <a class="my-button" href="./form">Ir a Formulario</a>
+</body>
 </html>
