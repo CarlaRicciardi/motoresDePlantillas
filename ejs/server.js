@@ -24,8 +24,17 @@ app.post('/productos', async (req, res) => {
   const { body } = req;
   try {
     container.save(body);
-    res.render('gracias.ejs');
+    res.redirect('/');
   } catch {
     res.json({ error: true, msj: 'No se pudo guardar el producto' });
+  }
+});
+
+app.get('/productos', async (req, res) => {
+  let products = await container.getAll();
+  if (products) {
+    res.render('pages/products', { productos: products });
+  } else {
+    res.json({ error: true });
   }
 });

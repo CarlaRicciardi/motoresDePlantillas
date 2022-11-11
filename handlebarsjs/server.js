@@ -3,6 +3,7 @@ const app = express();
 const { engine } = require('express-handlebars');
 const PORT = 8080;
 
+
 app.listen(PORT, () => {
   console.log(`Servidor http escuchando en el puerto http://localhost:${PORT}`);
 });
@@ -94,7 +95,6 @@ app.post('/productos', async (req, res) => {
 });
 
 app.get('/productos', async (req, res) => {
-  let products = await container.getAll()
+  let products = await container.getAll();
   res.render('productslist', { products, productsExist: true });
 });
-

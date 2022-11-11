@@ -76,7 +76,7 @@ app.get('/', (req, res) => {
 app.post('/productos', async (req, res) => {
   const { body } = req;
   try {
-    container.save(body);
+    await container.save(body);
     res.render('gracias.hbs');
   } catch {
     res.json({ error: true, msj: 'No se pudo guardar el producto' });
@@ -85,5 +85,5 @@ app.post('/productos', async (req, res) => {
 
 app.get('/productos', async (req, res) => {
   let products = await container.getAll();
-  res.render('products', { products });
+  res.render('products', { products: products });
 });
